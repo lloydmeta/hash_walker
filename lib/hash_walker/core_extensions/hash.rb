@@ -16,7 +16,7 @@ module HashWalker
                             else
                                 #new_path = path + %Q~["#{k.to_s}"]~
                                 new_path = path + ["#{k.to_s}"]
-                                node_key_value.each_primitive_value_at(v, new_path, &block)
+                                node_key_value.each_primitive_value_at(v, new_path, &block) unless node_key_value.nil?
                             end
                         end
                     else

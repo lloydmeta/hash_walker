@@ -10,15 +10,25 @@ describe Hash do
                 "b_value_bool" => true,
                 "b_value_float" => 4.20,
                 "b_inner_array" => [
-                    {   "content" => 'b_inner_array content 1',
+                    {
+                        "content" => 'b_inner_array content 1',
                         "b_inner_array_unneeded" => "don't read me!"
                     },
                     {
                         "content" => 'b_inner_array content 2',
                         "b_inner_array_unneeded" => "don't read me! 2"
                     },
-                    {   "content" => 'b_inner_array content 3',
+                    {
+                        "content" => 'b_inner_array content 3',
                         "b_inner_array_unneeded" => "don't read me! 3"
+                    },
+                    {
+                        "content" => 'b_inner_array content 4',
+                        "b_inner_array_unneeded" => "don't read me! 3",
+                        "b_inner_array_inner_hash" => {
+                            "content" => "really, really hidden...",
+                            "inner_array" => [3.14159,  2.71828]
+                        }
                     }
                 ]
             }
@@ -48,6 +58,23 @@ describe Hash do
                 "b_value_bool",
                 "b_value_float",
                 "b_inner_array" => ["content"]
+            ]
+        ]
+
+        @keys_to_read_REALLY_complete = [
+            "a_array",
+            "b_hash" => [
+                "b_value_string",
+                "b_value_int",
+                "b_value_bool",
+                "b_value_float",
+                "b_inner_array" => [
+                    "content",
+                    "b_inner_array_inner_hash" => [
+                        "content",
+                        "inner_array"
+                    ]
+                ]
             ]
         ]
     end
@@ -91,8 +118,19 @@ describe Hash do
             values_found << value
             paths_found << path
         }
-        values_found.size.should eq(12)
-        paths_found.size.should eq(12)
+        values_found.size.should eq(13)
+        paths_found.size.should eq(13)
+    end
+
+    it 'should find 16 values in total for @keys_to_read_REALLY_complete' do
+        values_found = []
+        paths_found = []
+        subject.each_primitive_value_at(@keys_to_read_REALLY_complete){|value,path|
+            values_found << value
+            paths_found << path
+        }
+        values_found.size.should eq(16)
+        paths_found.size.should eq(16)
     end
 
 end
