@@ -1,0 +1,1 @@
+require 'hash_walker/core_extensions/hash'
