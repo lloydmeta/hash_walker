@@ -57,7 +57,7 @@ describe Hash do
                 "b_value_int",
                 "b_value_bool",
                 "b_value_float",
-                "b_inner_array" => ["content"]
+                {"b_inner_array" => ["content"]}
             ]
         ]
 
@@ -68,13 +68,13 @@ describe Hash do
                 "b_value_int",
                 "b_value_bool",
                 "b_value_float",
-                "b_inner_array" => [
+                {"b_inner_array" => [
                     "content",
-                    "b_inner_array_inner_hash" => [
+                    {"b_inner_array_inner_hash" => [
                         "content",
                         "inner_array"
-                    ]
-                ]
+                    ]}
+                ]}
             ]
         ]
     end
