@@ -11,6 +11,12 @@ Add to your `Gemfile`:
     gem 'hash_walker'
 ```
 
+Where you want to use the method on your hashes:
+
+```ruby
+    require 'hash_walker'
+```
+
 ## License
 
 Copyright (c) 2012 by Lloyd Chan
