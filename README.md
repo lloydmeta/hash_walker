@@ -1,5 +1,8 @@
 # hash_walker
 
+[![Build
+Status](https://secure.travis-ci.org/lloydmeta/hash_walker.png)](http://travis-ci.org/lloydmeta/hash_walker)
+
 ## Installing
 
 Add to your `Gemfile`:
