@@ -465,7 +465,7 @@ describe Hash do
 
         describe 'validations' do
             before(:all) do
-                @keys_to_read = keys_to_read = [
+                @keys_to_read = [
                     "content",
                     "description",
                     "ingredients",
