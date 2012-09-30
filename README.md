@@ -3,7 +3,7 @@
 [![Build
 Status](https://secure.travis-ci.org/lloydmeta/hash_walker.png)](http://travis-ci.org/lloydmeta/hash_walker)
 
-A simple gem that allows you to traverse/walk a Hash (perhaps obtained from doing JSON::parse on a JSON string) according to a set of keys (also a hash), passing in a block to perform actions. This method will yield your block with each value found and the Hash 'path' of the value as arguments.
+A simple gem that allows you to traverse/walk a Hash (perhaps obtained from doing JSON::parse on a JSON string) according to a set of keys (also a hash), passing in a block to perform actions. This method will yield your block with each value found and the Hash 'path' of the value (as an array) as arguments.
 
 __Note__ This gem was built on Ruby 1.9.3, but Travis testing tells me its 1.9.2 compatible as well. Your mileage may vary...
 

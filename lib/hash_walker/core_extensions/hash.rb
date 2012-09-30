@@ -10,6 +10,11 @@ module HashWalker
                 Float
             ]
 
+            # Walks/traveres the current Hash object according to a set of
+            # keys (itself also an array/hash)
+            # Params:
+            # +keys+:: +Array+ An array of keys (which themselves can be hashes and further arrays) to look for
+            # +&block+:: +Block+ object that gets yielded and passed each value and each path (array) respectively as arguments
             def each_primitive_value_at(keys, path = [], &block)
                 keys.each do |key|
                     if key.is_a?(Hash)
