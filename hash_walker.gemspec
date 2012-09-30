@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
     gem.name        = %q{hash_walker}
-    gem.version = "0.0.2"
+    gem.version = "0.0.3"
     gem.date = %q{2012-09-30}
     gem.authors     = ["Lloyd Meta"]
     gem.email       = ["lloydmeta@gmail.com"]
