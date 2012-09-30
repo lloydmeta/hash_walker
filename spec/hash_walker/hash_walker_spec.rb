@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Hash do
-    context 'Simple Example' do
+    context 'simple example' do
         subject do
             {
                 "a_array" => [1,2,3,4,5],
@@ -508,18 +508,10 @@ describe Hash do
                 end.should_not raise_error
             end
 
-            it 'should return me values with proper paths' do
+            it 'should return me proper values with proper paths ' do
                 values_and_paths_found = []
 
                 subject.each_primitive_value_at(@keys_to_read){|value, path_array|
-                    path_as_string = path_array.reduce('') {|path_so_far, path_array_element|
-                        if path_array_element.is_a?(String)
-                            path_so_far += %Q~["#{path_array_element}"]~
-                        elsif path_array_element.is_a?(Integer)
-                            path_so_far += %Q~[#{path_array_element.to_s}]~
-                        end
-                        path_so_far
-                    }
                     values_and_paths_found << [value, path_array]
                 }
                 values_and_paths_found.size.should eq(47)
