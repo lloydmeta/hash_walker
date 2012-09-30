@@ -3,6 +3,8 @@
 [![Build
 Status](https://secure.travis-ci.org/lloydmeta/hash_walker.png)](http://travis-ci.org/lloydmeta/hash_walker)
 
+A simple gem that allows you to traverse/walk a Hash according to a set of keys (also a hash), passing in a block to perform actions on. This method will yield your block with each value found and the Hash 'path' of the value as arguments
+
 ## Installing
 
 Add to your `Gemfile`:
