@@ -76,8 +76,28 @@ Where you want to use the method on your hashes:
     ]
 
     my_hash.each_primitive_value_at(keys_to_read){|value,path|
-        puts value, path
+        puts "#{value}, #{path}"
     }
+
+    # Output
+
+    # 1, ["a_array", 0]
+    # 2, ["a_array", 1]
+    # 3, ["a_array", 2]
+    # 4, ["a_array", 3]
+    # 5, ["a_array", 4]
+    # b value as string, ["b_hash", "b_value_string"]
+    # 420, ["b_hash", "b_value_int"]
+    # true, ["b_hash", "b_value_bool"]
+    # 4.2, ["b_hash", "b_value_float"]
+    # b_inner_array content 1, ["b_hash", "b_inner_array", 0, "content"]
+    # b_inner_array content 2, ["b_hash", "b_inner_array", 1, "content"]
+    # b_inner_array content 3, ["b_hash", "b_inner_array", 2, "content"]
+    # b_inner_array content 4, ["b_hash", "b_inner_array", 3, "content"]
+    # really, really hidden..., ["b_hash", "b_inner_array", 3, "b_inner_array_inner_hash", "content"]
+    # 3.14159, ["b_hash", "b_inner_array", 3, "b_inner_array_inner_hash", "inner_array", 0]
+    # 2.71828, ["b_hash", "b_inner_array", 3, "b_inner_array_inner_hash", "inner_array", 1]
+
 ```
 
 
