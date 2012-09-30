@@ -516,7 +516,7 @@ describe Hash do
                 }
                 values_and_paths_found.size.should eq(47)
                 values_and_paths_found.each do |value_and_path|
-                    value_and_path[0].class.should be(String)
+                    value_and_path[0].class.should be(String) # in this example we only have string valuees being extracted
                     subject_value_at_path = value_and_path[1].reduce(subject){|value_so_far, step|
                         value_so_far = value_so_far[step]
                     }
