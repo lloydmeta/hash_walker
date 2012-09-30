@@ -22,6 +22,8 @@ Where you want to use the method on your hashes:
 ## Usage
 
 ```ruby
+    require 'hash_walker'
+
     my_hash = {
         "a_array" => [1,2,3,4,5],
         "b_hash" => {
